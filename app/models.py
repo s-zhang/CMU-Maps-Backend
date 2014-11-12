@@ -2,7 +2,7 @@ from django.contrib.gis.db import models
 
 class Building(models.Model):
     name = models.CharField(max_length=50)
-    graph = models.CharField(max_length=100) # To be revised
+    graph = models.FileField(upload_to="graphs")
     shape = models.PolygonField()
 
     objects = models.GeoManager()
@@ -14,7 +14,7 @@ class Floor(models.Model):
     name = models.CharField(max_length=50)
     level = models.IntegerField()
     building = models.ForeignKey(Building)
-    plan = models.CharField(max_length=100) # To be revised
+    plan = models.FileField(upload_to="plans")
 
     objects = models.GeoManager()
 
