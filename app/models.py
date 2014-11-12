@@ -12,7 +12,7 @@ class Building(models.Model):
 
 class Floor(models.Model):
     name = models.CharField(max_length=50)
-    level = models.IntegerField()
+    level = models.FloatField()
     building = models.ForeignKey(Building)
     plan = models.FileField(upload_to="plans")
 
