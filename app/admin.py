@@ -1,3 +1,6 @@
-from django.contrib import admin
+from django.contrib.gis import admin
+from models import Room, Floor, Building
 
-# Register your models here.
+admin.site.register(Room, admin.GeoModelAdmin)
+admin.site.register(Floor, admin.GeoModelAdmin)
+admin.site.register(Building, admin.GeoModelAdmin)
