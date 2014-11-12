@@ -7,7 +7,6 @@ class Building(models.Model):
 
     objects = models.GeoManager()
 
-    # Returns the string representation of the model.
     def __unicode__(self):
         return self.name
 
@@ -19,9 +18,8 @@ class Floor(models.Model):
 
     objects = models.GeoManager()
 
-    # Returns the string representation of the model.
     def __unicode__(self):
-        return self.name
+        return self.building.name + "_" + self.name
 
 class Room(models.Model):
     name = models.CharField(max_length=50)
@@ -31,6 +29,5 @@ class Room(models.Model):
     
     objects = models.GeoManager()
 
-    # Returns the string representation of the model.
     def __unicode__(self):
-        return self.name
+        return self.building.name + "_" + self.name
