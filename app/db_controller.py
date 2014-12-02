@@ -21,3 +21,6 @@ def get_graph_from_building(building):
 
 def get_anchor_from_room_id(room_id):
     return Room.objects.get(id=room_id).anchor
+
+def get_rooms_from_building(building_id):
+    return Room.objects.filter(building_id=building_id)
