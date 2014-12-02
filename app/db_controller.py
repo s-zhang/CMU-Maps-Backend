@@ -1,12 +1,14 @@
 from models import Room, Floor, Building
-import marshal
+import marshal, json
 
 def get_buildings_from_rectangle(rectangle):
     return Building.objects.filter(shape__intersects=rectangle)
 
 def get_plan_from_floor_and_building(floor_name, building):
     floor = Floor.objects.get(name=floor_name, building=building)
-    return floor.plan
+    floor.plan.open(mode="r")
+    with floor.plan.file:
+        return floor.plan.file.file.readlines()
 
 def get_floors_from_building(building):
     return building.floor_set.order_by("level")
