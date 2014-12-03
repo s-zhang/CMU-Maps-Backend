@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from app.views import display, query, route
 
-float_pattern = '[1-9][0-9]*\.?[0-9]*'
+float_pattern = '-?[1-9][0-9]*\.?[0-9]*'
 int_pattern = '[1-9][0-9]*'
 
 urlpatterns = patterns('',

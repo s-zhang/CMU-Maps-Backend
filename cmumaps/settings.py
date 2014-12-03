@@ -61,7 +61,9 @@ DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
          'NAME': 'cmumaps',
-         'USER': 'steven',
+         'USER': 'getmethere',
+         'PASSWORD': 'cmu',
+         'HOST': 'localhost'
      }
 }
 
